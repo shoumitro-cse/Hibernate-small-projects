@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class discriminator-value="emp" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.javatpoint.xml_ex.Employee" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="emp121">
+    <id column="id" name="id">
+      <generator class="increment"/>
+    </id>
+    <discriminator column="type" type="string"/>
+    <property column="name" name="name"/>
+    <subclass discriminator-value="reg_emp" name="com.javatpoint.xml_ex.Regular_Employee">
+      <property column="salary" name="salary"/>
+      <property column="bonus" name="bonus"/>
+    </subclass>
+    <subclass discriminator-value="con_emp" name="com.javatpoint.xml_ex.Contract_Employee">
+      <property column="pay_per_hours" name="pay_per_hours"/>
+      <property column="contract_duration" name="contract_duration"/>
+    </subclass>
+  </class>
+</hibernate-mapping>

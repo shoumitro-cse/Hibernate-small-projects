@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="testPackage">
+  
+    <class name="Author" table="Authors">
+        <meta attribute="class-description">
+           This class contains the author detail.
+        </meta>
+        
+      <id column="id" name="id" type="int">
+        <generator class="native"/>
+      </id>
+      
+      <property column="name" name="name" type="string"/>
+      <property column="age" name="age" type="int"/>
+    </class>
+    
+    
+
+    <class name="Book" table="books">
+         <meta attribute="class-description">
+             This class contains the book detail.
+         </meta>
+
+        <id column="id" name="id" type="int">
+          <generator class="native"/>
+        </id>
+        
+        <property column="title" name="title" type="string"/>
+        <property column="genre" name="genre" type="string"/>
+        <property column="author" name="author" type="string"/>
+    </class>
+  
+</hibernate-mapping>

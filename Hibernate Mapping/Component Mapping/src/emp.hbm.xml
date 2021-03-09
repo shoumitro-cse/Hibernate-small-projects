@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    
+   <!-- <filter-def name="" condition="" ></filter-def>-->
+   <!-- <version ></version>
+        <composite-id  >
+             <key-property  >
+                 
+             </key-property>
+         </composite-id>-->
+
+
+
+  <class  name="com.javatpoint.Employee" table="emp" >
+     
+<!--      <id></id>
+      
+      <sql-insert ></sql-insert>
+      <timestamp ></timestamp>
+      <version ></version>
+
+      <one-to-one  ></one-to-one>
+      
+      <component ></component>
+      <discriminator ></discriminator>
+
+      <subselect></subselect>
+      <natural-id ></natural-id>
+      <loader ></loader>
+      <subclass ></subclass>
+      <many-to-one ></many-to-one>
+  
+      <any></any>  
+      <filter ></filter>   
+      <resultset ></resultset> 
+      <sql-query ></sql-query>
+      
+      <dynamic-component ></dynamic-component>
+      <properties ></properties>
+      
+      
+      
+      
+      <array table=""> </array>
+      <primitive-array table=""></primitive-array>
+      <joined-subclass table=""></joined-subclass>
+      <union-subclass table=""></union-subclass>
+      <idbag table=""></idbag>
+      <set table="" ></set>
+      <map table=""></map>
+      <bag table=""></bag>
+      <list table=""></list>
+      <join table=""></join>-->
+      
+
+     <!--<cache usage="read-only" />-->  
+      
+     <id name="id" column="id">
+          <generator class="increment"></generator>
+      </id>
+      
+      <!--<filter name="" condition=""></filter>-->
+      
+      <property name="name" column="name"></property>
+        
+      <component  class="com.javatpoint.Address" name="address">
+          <property name="city" column="city"></property>
+          <property name="country" column="country"></property>
+          <property name="pincode" column="pincode"></property>
+      </component>
+     
+  </class>
+  
+  <query name="find_emp" >  
+     <![CDATA[from Employee]]>       
+  </query>  
+
+  <query name="find_name">
+      <![CDATA[from Employee e where e.name=:name]]>
+  </query>
+  
+</hibernate-mapping>

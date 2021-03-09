@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 10, 2019 11:01:54 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+<!--    <query ></query>
+    <joined-subclass catalog=""></joined-subclass>
+    <filter-def condition=""></filter-def>
+    <import class=""></import>
+    <sql-query ></sql-query>
+    <database-object>
+        <create>create table Employee1 ( id int ); </create>
+        <drop></drop>
+    </database-object>-->
+    
+    <class name="com.javatpoint.mypackage.Employee" table="Employee">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="lastName" type="java.lang.String">
+            <column name="lastName" />
+        </property>
+        <property name="firstName" type="java.lang.String">
+            <column name="firstName" />
+        </property>
+        <property name="age" type="int">
+            <column name="age" />
+        </property>
+    </class>
+</hibernate-mapping>

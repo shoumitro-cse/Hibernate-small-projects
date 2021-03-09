@@ -1,0 +1,12 @@
+## https://www.javatpoint.com/hibernate-logging-by-log4j-using-xml-file
+
+There are two ways to perform logging using log4j:
+
+1. By log4j.xml file (or)
+2. By log4j.properties file
+
+Steps to perform Hibernate Logging by Log4j using xml file
+There are two ways to perform logging using log4j using xml file:
+
+1. Load the log4j jar files with hibernate
+2. Create the log4j.xml or log4j.properties file inside the src folder (parallel with hibernate.cfg.xml file)

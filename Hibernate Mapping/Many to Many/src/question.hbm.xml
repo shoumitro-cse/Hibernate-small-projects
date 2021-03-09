@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class  name="com.javatpoint.Question" table="question" >
+        <id name="id">
+            <column name="id"></column>
+            <generator class="increment"></generator>
+        </id>
+        <property name="qname" column="qname"></property>
+        
+        <list name="answers" table="question_answer">
+            <key column="qa_id" foreign-key="fk_qa" ></key>
+            <index column="type"></index>
+            <many-to-many class="com.javatpoint.Answer" column="ans_id" foreign-key="fk_ans" ></many-to-many>
+        </list>
+        
+    </class>
+    
+    <class name="com.javatpoint.Answer" table="answer">
+        <id name="ans_id" column="ans_id">
+            <generator class="increment"></generator>
+        </id>
+        <property name="answername" column="answername"></property>
+        <property name="postedBy" column="postedBy"></property>
+          
+        <list name="questions" table="answer_question">
+            <key column="ans_id" foreign-key="fk_ans_id" ></key>
+            <index column="type"></index>
+            <many-to-many class="com.javatpoint.Question" column="id" foreign-key="fk_qa_ans" ></many-to-many>
+        </list>
+   
+    </class>
+    
+</hibernate-mapping>
